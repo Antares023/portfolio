@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* GitHub Dark Palette */
+  --color-gh-canvas: #0d1117;
+  --color-gh-surface: #161b22;
+  --color-gh-border: #30363d;
+  --color-gh-border-hover: #484f58;
+  --color-gh-text: #e6edf3;
+  --color-gh-text-muted: #7d8590;
+  --color-gh-text-subtle: #484f58;
+
+  /* Accent Colors */
+  --color-accent-blue: #58a6ff;
+  --color-accent-green: #3fb950;
+  --color-accent-orange: #f78166;
+  --color-accent-purple: #bc8cff;
+  --color-accent-yellow: #e3b341;
+  --color-accent-red: #f85149;
+
+  /* Language Colors */
+  --color-lang-js: #f1e05a;
+  --color-lang-python: #3572A5;
+  --color-lang-php: #4F5D95;
+  --color-lang-blade: #f7523f;
+  --color-lang-html: #e34c26;
+
+  /* Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Base ────────────────────────────────────────── */
+@layer base {
+  body {
+    background-color: var(--color-gh-canvas);
+    color: var(--color-gh-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(88, 166, 255, 0.3);
+    color: var(--color-gh-text);
+  }
+
+  /* Subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-gh-canvas);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gh-border);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gh-border-hover);
+  }
+
+  /* Thin scrollbar for horizontal carousels */
+  .thin-scrollbar::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-gh-border);
+    border-radius: 4px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-blue);
+  }
+  
+  /* Hide scrollbar completely if needed */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ── Components ──────────────────────────────────── */
+@layer components {
+  .dev-btn {
+    @apply px-4 py-1.5 bg-gh-surface text-gh-text font-medium text-sm rounded-md
+           border border-gh-border transition-all duration-150
+           hover:border-gh-border-hover hover:bg-[#1f2937];
+  }
+
+  .dev-btn-primary {
+    @apply px-4 py-1.5 bg-accent-green text-gh-canvas font-semibold text-sm rounded-md
+           border border-accent-green/50 transition-all duration-150
+           hover:bg-[#2ea043];
+  }
+
+  .dev-card {
+    @apply bg-gh-surface rounded-md border border-gh-border p-5
+           transition-all duration-200
+           hover:border-gh-border-hover;
+  }
+
+  .dev-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full
+           bg-gh-surface border border-gh-border text-gh-text-muted text-xs font-medium;
+  }
+}
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.5rem)); }
+}
+
+.animate-marquee-mobile {
+  animation: slide-left 20s linear infinite;
+}
+.animate-marquee-mobile:hover,
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee {
+  animation: slide-left 30s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .animate-marquee-mobile {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+/* Dot-grid background pattern (like Linear) */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, var(--color-gh-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
