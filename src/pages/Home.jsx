@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Muhammad Ilham Ramdhani | Software Engineer</title>
+        <title>Muhammad Ilham Ramdhani | Web & Embedded Systems Engineer</title>
         <meta name="description" content="Portfolio of Muhammad Ilham Ramdhani featuring About Me, Tech Toolbox, Milestone Projects, and Contact." />
         <link rel="canonical" href="https://emham.my.id/" />
       </Helmet>

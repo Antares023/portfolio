@@ -11,7 +11,7 @@ export default function ContactSection() {
           Connect With Me
         </h2>
         <p className="text-gh-text-muted text-sm mt-1 max-w-xl">
-          Leave a message in the guestbook or reach out through any of the platforms below to discuss software engineering opportunities!
+          Leave a message in the guestbook or reach out through any of the platforms below to discuss Web & IoT engineering opportunities!
         </p>
       </div>
 

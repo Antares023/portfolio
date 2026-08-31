@@ -9,7 +9,7 @@ export default function AboutSection() {
           About Me
         </h2>
         <p className="text-gh-text-muted text-sm mt-1 max-w-xl">
-          A dedicated Software Engineer driven by curiosity, technical rigor, and building high-performance systems.
+          A dedicated Web & Embedded Systems Engineer driven by curiosity, technical rigor, and building high-performance solutions.
         </p>
       </div>
 
@@ -31,11 +31,11 @@ export default function AboutSection() {
             </div>
 
             <p className="text-gh-text-muted text-sm leading-relaxed">
-              Hello! I am a Software Engineer based in Indonesia with a strong background in developing progressive web applications, machine learning classification engines, and IoT sensor platforms.
+              Hello! I am a Web & Embedded Systems Engineer based in Indonesia with a strong background in developing progressive web applications, machine learning models, and IoT sensor platforms.
             </p>
 
             <p className="text-gh-text-muted text-sm leading-relaxed">
-              I believe software engineering is about solving real-world challenges through elegant architecture, robust algorithms, and responsive user interfaces.
+              I believe engineering is about solving real-world challenges through elegant architecture, robust algorithms, and seamless hardware-software integration.
             </p>
           </div>
 
