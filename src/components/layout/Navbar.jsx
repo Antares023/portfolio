@@ -71,7 +71,7 @@ export default function Navbar() {
             />
           </div>
           <span className="font-mono text-sm font-bold text-gh-text tracking-tight group-hover:text-accent-blue transition-colors">
-            emham<span className="text-accent-blue">.dev</span>
+            emham<span className="text-accent-blue">.my.id</span>
             <span className="cursor-blink text-accent-green ml-0.5">_</span>
           </span>
         </Link>

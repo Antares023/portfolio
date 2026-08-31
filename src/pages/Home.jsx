@@ -9,8 +9,9 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Muhammad Ilham Ramdhani (Antares023) — Software Engineer Portfolio</title>
+        <title>Muhammad Ilham Ramdhani | Software Engineer</title>
         <meta name="description" content="Portfolio of Muhammad Ilham Ramdhani featuring About Me, Tech Toolbox, Milestone Projects, and Contact." />
+        <link rel="canonical" href="https://emham.my.id/" />
       </Helmet>
 
       <div className="max-w-6xl mx-auto px-6 space-y-12">

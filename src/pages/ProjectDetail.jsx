@@ -31,6 +31,7 @@ export default function ProjectDetail() {
       <Helmet>
         <title>{project.title} · Antares023</title>
         <meta name="description" content={project.shortDescription} />
+        <link rel="canonical" href={`https://emham.my.id/project/${project.id}`} />
       </Helmet>
 
       <div className="max-w-5xl mx-auto px-6 py-8">
