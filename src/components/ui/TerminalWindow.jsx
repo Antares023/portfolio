@@ -11,7 +11,7 @@ export default function TerminalWindow({ title = 'bash', children }) {
         <span className="ml-2 text-gh-text-muted text-xs font-mono">{title}</span>
       </div>
       {/* Terminal content */}
-      <div className="p-5 font-mono text-sm leading-relaxed bg-gh-canvas">
+      <div className="p-5 font-mono text-sm leading-relaxed bg-gh-canvas overflow-x-auto thin-scrollbar whitespace-pre-wrap break-words">
         {children}
       </div>
     </div>

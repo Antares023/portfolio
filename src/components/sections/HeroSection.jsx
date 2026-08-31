@@ -94,7 +94,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-gh-text-muted text-base sm:text-lg leading-relaxed max-w-2xl">
-            Passionate software engineer specializing in full-stack web applications, machine learning models, and real-time IoT architectures. Focused on clean code, performance, and real-world impact.
+            Passionate embedded systems and web development specializing in full-stack web applications, AI/ML models, and real-time IoT systems. Focused on clean code, performance, and real-world impact.
           </p>
 
           {/* Action CTAs */}

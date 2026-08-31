@@ -9,7 +9,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <div className="min-h-screen flex flex-col bg-gh-canvas">
+        <div className="min-h-screen flex flex-col bg-gh-canvas w-full overflow-x-hidden">
           <Navbar />
           <main className="flex-grow">
             <Routes>
