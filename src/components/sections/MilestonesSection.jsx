@@ -1,7 +1,19 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import MilestoneItem from '../ui/MilestoneItem';
 import { projects } from '../../data/projects';
+import Reveal from '../ui/Reveal';
+
+function SectionAccentLine() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-40px' });
+  return (
+    <div
+      ref={ref}
+      className={`w-10 h-[2px] bg-accent-purple mt-3 rounded-full ${isInView ? 'accent-line-visible' : 'accent-line'}`}
+    />
+  );
+}
 
 export default function MilestonesSection() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -22,17 +34,20 @@ export default function MilestonesSection() {
     <section id="milestones" className="py-16 border-t border-gh-border/60 relative z-10">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
-        <div>
-          <span className="text-accent-purple font-mono text-xs uppercase tracking-wider block mb-1">
-            // Roadmap & Timeline
-          </span>
-          <h2 className="text-3xl font-extrabold text-gh-text tracking-tight flex items-center gap-3">
-            Projects & Milestones
-          </h2>
-          <p className="text-gh-text-muted text-sm mt-1 max-w-xl">
-            A chronological timeline of major releases, research prototypes, and software developments.
-          </p>
-        </div>
+        <Reveal>
+          <div>
+            <span className="text-accent-purple font-mono text-xs uppercase tracking-wider block mb-1">
+              // Roadmap & Timeline
+            </span>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gh-text tracking-tight flex items-center gap-3">
+              Projects & Milestones
+            </h2>
+            <p className="text-gh-text-muted text-xs md:text-sm mt-1 max-w-xl">
+              A chronological timeline of major releases, research prototypes, and software developments.
+            </p>
+            <SectionAccentLine />
+          </div>
+        </Reveal>
 
         {/* Filters */}
         <div className="flex items-center gap-3 w-full md:w-auto">
@@ -74,7 +89,7 @@ export default function MilestonesSection() {
                           setActiveCategory(cat);
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full text-left px-5 py-3 text-sm font-medium transition-all flex items-center gap-2 ${
+                        className={`w-full text-left px-5 py-3 text-xs md:text-sm font-medium transition-all flex items-center gap-2 ${
                           activeCategory === cat
                             ? 'bg-accent-purple/15 text-accent-purple border-l-2 border-accent-purple'
                             : 'text-gh-text-muted hover:bg-gh-surface hover:text-gh-text border-l-2 border-transparent'

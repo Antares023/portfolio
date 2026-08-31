@@ -1,6 +1,18 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { toolboxItems, toolboxCategories } from '../../data/toolbox';
+import Reveal from '../ui/Reveal';
+
+function SectionAccentLine() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-40px' });
+  return (
+    <div
+      ref={ref}
+      className={`w-10 h-[2px] bg-accent-green mt-3 rounded-full ${isInView ? 'accent-line-visible' : 'accent-line'}`}
+    />
+  );
+}
 import { 
   siCplusplus, siArduino, siEspressif, 
   siHtml5, siJavascript, siPhp, siLaravel, siReact, siVite,
@@ -92,23 +104,26 @@ export default function ToolboxSection() {
     <section id="toolbox" className="py-16 border-t border-gh-border/60 relative z-10">
       {/* Section Title */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
-        <div>
-          <span className="text-accent-green font-mono text-xs uppercase tracking-wider block mb-1">
-            // Tech Stack & Frameworks
-          </span>
-          <h2 className="text-3xl font-extrabold text-gh-text tracking-tight flex items-center gap-3">
-            Tech Stack
-          </h2>
-          <p className="text-gh-text-muted text-sm mt-1 max-w-xl">
-            A curated list of programming languages, frameworks, libraries, and tools I use to build scalable products.
-          </p>
-        </div>
+        <Reveal>
+          <div>
+            <span className="text-accent-green font-mono text-xs uppercase tracking-wider block mb-1">
+              // Tech Stack & Frameworks
+            </span>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gh-text tracking-tight flex items-center gap-3">
+              Tech Stack
+            </h2>
+            <p className="text-gh-text-muted text-xs md:text-sm mt-1 max-w-xl">
+              A curated list of programming languages, frameworks, libraries, and tools I use to build scalable products.
+            </p>
+            <SectionAccentLine />
+          </div>
+        </Reveal>
 
         {/* Category Dropdown Filter */}
         <div className="relative w-full md:w-auto">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className={`w-full md:w-64 flex items-center justify-between gap-3 bg-gh-surface/60 backdrop-blur-md border px-5 py-2.5 rounded-xl text-sm font-semibold text-gh-text transition-all shadow-[0_4px_12px_rgba(0,0,0,0.1)] ${
+            className={`w-full md:w-64 flex items-center justify-between gap-3 bg-gh-surface/60 backdrop-blur-md border px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-gh-text transition-all shadow-[0_4px_12px_rgba(0,0,0,0.1)] ${
               isDropdownOpen 
                 ? 'border-accent-blue/80 bg-gh-surface shadow-[0_4px_20px_rgba(59,130,246,0.15)]' 
                 : 'border-gh-border/60 hover:border-accent-blue/50 hover:bg-gh-surface'

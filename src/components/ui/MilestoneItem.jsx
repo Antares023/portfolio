@@ -25,9 +25,12 @@ export default function MilestoneItem({ project, index = 0, isLast = false }) {
       )}
 
       {/* Timeline Node Icon (Git Commit / Milestone Node) */}
-      <div className="absolute left-0 md:left-1 top-1.5 w-7 h-7 rounded-full bg-gh-canvas border-2 border-gh-border flex items-center justify-center group-hover:border-accent-blue group-hover:shadow-[0_0_12px_rgba(88,166,255,0.4)] transition-all">
+      <motion.div 
+        className="absolute left-0 md:left-1 top-1.5 w-7 h-7 rounded-full bg-gh-canvas border-2 border-gh-border flex items-center justify-center group-hover:border-accent-blue group-hover:shadow-[0_0_12px_rgba(88,166,255,0.4)] transition-all"
+        whileHover={{ scale: [1, 1.3, 1], transition: { duration: 0.4 } }}
+      >
         <div className="w-2.5 h-2.5 rounded-full bg-accent-blue group-hover:scale-125 transition-transform" />
-      </div>
+      </motion.div>
 
       {/* Milestone Card */}
       <div className="dev-card bg-gh-surface/80 backdrop-blur-sm border border-gh-border hover:border-accent-blue/50 transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] mb-8 flex flex-col h-full">
