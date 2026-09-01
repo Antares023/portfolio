@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "techStack": "Tech Stack",
+    "milestones": "Milestones",
+    "contact": "Contact",
+    "resume": "Resume",
+    "github": "GitHub",
+    "githubProfile": "GitHub Profile",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode"
+  },
+  "hero": {
+    "badge": "Embedded Systems & Web Development",
+    "titleLine1": "Crafting Intelligent",
+    "titleLine2": "Web & IoT Systems",
+    "description": "Passionate embedded systems and web development specializing in full-stack web applications, AI/ML models, and real-time IoT systems. Focused on clean code, performance, and real-world impact.",
+    "ctaMilestones": "Explore Milestones",
+    "ctaResume": "Resume",
+    "ctaToolbox": "View My Toolbox",
+    "yearsLabel": "Years",
+    "yearsSub": "Development Focus",
+    "projectsLabel": "Projects",
+    "projectsSub": "Web, AI & IoT",
+    "customLabel": "Custom",
+    "customSub": "Milestone Driven"
+  },
+  "about": {
+    "tag": "// Who I Am",
+    "title": "About Me",
+    "subtitle": "A dedicated Web & Embedded Systems Engineer driven by curiosity, technical rigor, and building high-performance solutions.",
+    "name": "Muhammad Ilham Ramdhani",
+    "role": "Embedded Systems & Web Development",
+    "bio1": "Hello! I am a Web & Embedded Systems Engineer based in Indonesia with a strong background in developing progressive web applications, machine learning models, and IoT sensor platforms.",
+    "bio2": "I believe engineering is about solving real-world challenges through elegant architecture, robust algorithms, and seamless hardware-software integration.",
+    "downloadResume": "Download Full Resume (.pdf)",
+    "location": "Location: Indonesia",
+    "status": "Active Code",
+    "cards": {
+      "web": {
+        "title": "Web Development",
+        "desc": "Building responsive Single Page Applications and Progressive Web Apps (PWA) using React, Tailwind CSS, Laravel, and modern JavaScript toolchains."
+      },
+      "ai": {
+        "title": "AI & Machine Learning",
+        "desc": "Designing predictive neural networks, computer vision algorithms, and fuzzy logic expert systems using Python, TensorFlow, and OpenCV."
+      },
+      "iot": {
+        "title": "IoT & Embedded Systems",
+        "desc": "Interfacing ESP32/ESP8266 microcontrollers with real-time sensors, telemetry protocols (MQTT, HTTP), and cloud dashboards."
+      },
+      "arch": {
+        "title": "Clean Architecture",
+        "desc": "Writing maintainable, modular, and well-documented code adhering to solid engineering principles, Git versioning, and CI/CD workflows."
+      }
+    }
+  },
+  "toolbox": {
+    "tag": "// Tech Stack & Frameworks",
+    "title": "Tech Stack",
+    "subtitle": "A curated list of programming languages, frameworks, libraries, and tools I use to build scalable products.",
+    "allCategories": "All Categories"
+  },
+  "milestones": {
+    "tag": "// Roadmap & Timeline",
+    "title": "Projects & Milestones",
+    "subtitle": "A chronological timeline of major releases, research prototypes, and software developments.",
+    "allCategories": "All Categories",
+    "viewProject": "View Project"
+  },
+  "contact": {
+    "tag": "// Community & Contact",
+    "title": "Connect With Me",
+    "subtitle": "Leave a message in the guestbook or reach out through any of the platforms below to discuss Web & IoT engineering opportunities!",
+    "guestbook": "Public Guestbook",
+    "directContact": "Direct Contact"
+  },
+  "footer": {
+    "copyright": "© 2026 Antares023. Built with",
+    "github": "GitHub",
+    "email": "Email"
+  }
+}

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Giscus from '@giscus/react';
 import Reveal from '../ui/Reveal';
 
@@ -64,18 +65,20 @@ const contactLinks = [
 ];
 
 export default function ContactSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="py-16 border-t border-gh-border/60 relative">
       <Reveal>
         <div className="mb-10">
           <span className="text-accent-blue font-mono text-xs uppercase tracking-wider block mb-1">
-            // Community & Contact
+            {t('contact.tag')}
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gh-text tracking-tight flex items-center gap-3">
-            Connect With Me
+            {t('contact.title')}
           </h2>
           <p className="text-gh-text-muted text-xs md:text-sm mt-1 max-w-xl">
-            Leave a message in the guestbook or reach out through any of the platforms below to discuss Web & IoT engineering opportunities!
+            {t('contact.subtitle')}
           </p>
           <SectionAccentLine />
         </div>
@@ -113,7 +116,7 @@ export default function ContactSection() {
         <Reveal direction="fade-right" delay={0.25} className="lg:col-span-5">
           <div className="dev-card bg-gh-surface/60 border border-gh-border p-6 h-full flex flex-col justify-center">
             <h4 className="font-mono text-xs md:text-sm font-bold text-accent-blue uppercase tracking-wider mb-6 pb-2 border-b border-gh-border/50">
-              Direct Contact
+              {t('contact.directContact')}
             </h4>
             
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-4 font-mono text-xs">

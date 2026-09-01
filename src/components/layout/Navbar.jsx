@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { useTheme } from '../../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const navItems = [
-  { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'toolbox', label: 'Tech Stack' },
-  { id: 'milestones', label: 'Milestones' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'hero', labelKey: 'nav.home' },
+  { id: 'about', labelKey: 'nav.about' },
+  { id: 'toolbox', labelKey: 'nav.techStack' },
+  { id: 'milestones', labelKey: 'nav.milestones' },
+  { id: 'contact', labelKey: 'nav.contact' },
 ];
 
 export default function Navbar() {
@@ -18,6 +20,12 @@ export default function Navbar() {
   const isHomePage = location.pathname === '/';
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const { t, i18n } = useTranslation();
+
+  const toggleLang = () => {
+    i18n.changeLanguage(i18n.language === 'en' ? 'id' : 'en');
+  };
 
   const { scrollYProgress } = useScroll();
 
@@ -112,7 +120,7 @@ export default function Navbar() {
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
-                  <span className="relative z-10">{item.label}</span>
+                  <span className="relative z-10">{t(item.labelKey)}</span>
                 </button>
               ) : (
                 <Link
@@ -120,7 +128,7 @@ export default function Navbar() {
                   to={`/#${item.id}`}
                   className="px-3.5 py-1 rounded-full text-xs font-mono text-gh-text-muted hover:text-gh-text transition-colors"
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Link>
               )
             ))}
@@ -150,13 +158,70 @@ export default function Navbar() {
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Resume
+              {t('nav.resume')}
             </a>
+
+            {/* Toggles Group */}
+            <div className="flex items-center gap-2 sm:gap-4 ml-1 sm:ml-2">
+              {/* Theme Slider */}
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="relative flex items-center w-[60px] h-[30px] bg-gh-surface/80 border border-gh-border rounded-full p-1 cursor-pointer transition-colors focus:outline-none hover:border-gh-border-hover"
+                aria-label="Toggle theme"
+              >
+                <motion.div
+                  className="absolute w-[22px] h-[22px] bg-gh-text rounded-full flex items-center justify-center z-10 shadow-sm"
+                  animate={{ x: theme === 'dark' ? 30 : 0 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                >
+                  {theme === 'dark' ? (
+                    <svg className="w-3.5 h-3.5 text-gh-canvas" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                  ) : (
+                    <svg className="w-3.5 h-3.5 text-gh-canvas" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  )}
+                </motion.div>
+                <div className="w-full flex justify-between px-1 text-gh-text-muted">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                </div>
+              </button>
+
+              {/* Language Slider */}
+              <button
+                type="button"
+                onClick={toggleLang}
+                className="relative flex items-center w-[60px] h-[30px] bg-gh-surface/80 border border-gh-border rounded-full p-1 cursor-pointer transition-colors focus:outline-none hover:border-gh-border-hover"
+                aria-label="Toggle language"
+              >
+                <motion.div
+                  className="absolute w-[22px] h-[22px] bg-accent-blue rounded-full flex items-center justify-center z-10 shadow-sm"
+                  animate={{ x: i18n.language.startsWith('id') ? 30 : 0 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                >
+                  <span className="text-[10px] font-bold text-white">
+                    {i18n.language.startsWith('id') ? 'ID' : 'EN'}
+                  </span>
+                </motion.div>
+                <div className="w-full flex justify-between px-1.5 text-[10px] font-bold text-gh-text-muted font-mono">
+                  <span>EN</span>
+                  <span>ID</span>
+                </div>
+              </button>
+            </div>
 
             {/* Mobile Menu Toggle */}
             <button 
               type="button"
-              className="md:hidden p-2 -mr-2 text-gh-text-muted hover:text-gh-text focus:outline-none"
+              className="md:hidden p-2 ml-1 -mr-2 text-gh-text-muted hover:text-gh-text focus:outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle mobile menu"
             >
@@ -187,7 +252,7 @@ export default function Navbar() {
                     activeSection === item.id ? 'bg-accent-blue/10 text-accent-blue font-bold' : 'text-gh-text-muted hover:bg-gh-canvas hover:text-gh-text'
                   }`}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </button>
               ) : (
                 <Link
@@ -196,7 +261,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-left px-4 py-2 rounded-md text-sm font-mono text-gh-text-muted hover:bg-gh-canvas hover:text-gh-text transition-colors"
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Link>
               )
             ))}
@@ -207,7 +272,7 @@ export default function Navbar() {
               rel="noreferrer"
               className="dev-btn w-full justify-center text-xs font-mono mb-2"
             >
-              GitHub Profile
+              {t('nav.githubProfile')}
             </a>
             <a
               href="/resume.pdf"
@@ -218,7 +283,7 @@ export default function Navbar() {
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Resume
+              {t('nav.resume')}
             </a>
           </div>
         </div>

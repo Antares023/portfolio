@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import MilestoneItem from '../ui/MilestoneItem';
 import { projects } from '../../data/projects';
 import Reveal from '../ui/Reveal';
@@ -18,7 +19,8 @@ function SectionAccentLine() {
 export default function MilestonesSection() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [sortOrder, setSortOrder] = useState('newest'); // 'newest' or 'oldest'
+  const [sortOrder, setSortOrder] = useState('newest');
+  const { t } = useTranslation();
   const categories = ['All', ...new Set(projects.map(p => p.category))];
 
   // Filter and sort the projects
@@ -37,13 +39,13 @@ export default function MilestonesSection() {
         <Reveal>
           <div>
             <span className="text-accent-purple font-mono text-xs uppercase tracking-wider block mb-1">
-              // Roadmap & Timeline
+              {t('milestones.tag')}
             </span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-gh-text tracking-tight flex items-center gap-3">
-              Projects & Milestones
+              {t('milestones.title')}
             </h2>
             <p className="text-gh-text-muted text-xs md:text-sm mt-1 max-w-xl">
-              A chronological timeline of major releases, research prototypes, and software developments.
+              {t('milestones.subtitle')}
             </p>
             <SectionAccentLine />
           </div>
@@ -79,7 +81,7 @@ export default function MilestonesSection() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute z-20 w-full mt-3 bg-[#161b22]/95 backdrop-blur-xl border border-[#30363d]/80 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden ring-1 ring-white/5"
+                  className="absolute z-20 w-full mt-3 bg-gh-surface/95 backdrop-blur-xl border border-gh-border/80 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden ring-1 ring-white/5"
                 >
                   <div className="py-2">
                     {categories.map(cat => (

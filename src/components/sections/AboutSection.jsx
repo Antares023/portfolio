@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Reveal from '../ui/Reveal';
 
 function SectionAccentLine() {
@@ -15,18 +16,20 @@ function SectionAccentLine() {
 }
 
 export default function AboutSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="py-16 border-t border-gh-border/60 relative">
       <Reveal>
         <div className="mb-10">
           <span className="text-accent-blue font-mono text-xs uppercase tracking-wider block mb-1">
-            // Who I Am
+            {t('about.tag')}
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gh-text tracking-tight flex items-center gap-3">
-            About Me
+            {t('about.title')}
           </h2>
           <p className="text-gh-text-muted text-xs sm:text-sm mt-1 max-w-xl">
-            A dedicated Web & Embedded Systems Engineer driven by curiosity, technical rigor, and building high-performance solutions.
+            {t('about.subtitle')}
           </p>
           <SectionAccentLine />
         </div>
@@ -44,18 +47,18 @@ export default function AboutSection() {
                   className="w-16 h-16 rounded-xl border border-gh-border object-cover"
                 />
                 <div>
-                  <h3 className="font-mono text-sm md:text-base font-bold text-gh-text">Muhammad Ilham Ramdhani</h3>
+                  <h3 className="font-mono text-sm md:text-base font-bold text-gh-text">{t('about.name')}</h3>
                   <p className="text-xs text-accent-blue font-mono">@Antares023</p>
-                  <p className="text-[10px] sm:text-xs text-gh-text-muted mt-0.5">Embedded Systems & Web Development</p>
+                  <p className="text-[10px] sm:text-xs text-gh-text-muted mt-0.5">{t('about.role')}</p>
                 </div>
               </div>
 
               <p className="text-gh-text-muted text-xs sm:text-sm leading-relaxed">
-                Hello! I am a Web & Embedded Systems Engineer based in Indonesia with a strong background in developing progressive web applications, machine learning models, and IoT sensor platforms.
+                {t('about.bio1')}
               </p>
 
               <p className="text-gh-text-muted text-xs sm:text-sm leading-relaxed">
-                I believe engineering is about solving real-world challenges through elegant architecture, robust algorithms, and seamless hardware-software integration.
+                {t('about.bio2')}
               </p>
 
               <div className="pt-2">
@@ -75,10 +78,10 @@ export default function AboutSection() {
 
             {/* Social Badges */}
             <div className="pt-6 mt-6 border-t border-gh-border/60 flex items-center justify-between font-mono text-xs">
-              <span className="text-gh-text-subtle">Location: Indonesia</span>
+              <span className="text-gh-text-subtle">{t('about.location')}</span>
               <span className="text-accent-green flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-accent-green" />
-                Active Code
+                {t('about.status')}
               </span>
             </div>
           </div>
@@ -89,10 +92,10 @@ export default function AboutSection() {
           <div className="flex sm:grid sm:grid-cols-2 gap-4 w-max sm:w-auto animate-marquee-mobile">
             {/* Original 4 Cards */}
             {[
-              { emoji: '💻', title: 'Web Development', desc: 'Building responsive Single Page Applications and Progressive Web Apps (PWA) using React, Tailwind CSS, Laravel, and modern JavaScript toolchains.', color: 'accent-blue' },
-              { emoji: '🧠', title: 'AI & Machine Learning', desc: 'Designing predictive neural networks, computer vision algorithms, and fuzzy logic expert systems using Python, TensorFlow, and OpenCV.', color: 'accent-purple' },
-              { emoji: '⚡', title: 'IoT & Embedded Systems', desc: 'Interfacing ESP32/ESP8266 microcontrollers with real-time sensors, telemetry protocols (MQTT, HTTP), and cloud dashboards.', color: 'accent-green' },
-              { emoji: '🚀', title: 'Clean Architecture', desc: 'Writing maintainable, modular, and well-documented code adhering to solid engineering principles, Git versioning, and CI/CD workflows.', color: 'accent-orange' },
+              { emoji: '💻', title: t('about.cards.web.title'), desc: t('about.cards.web.desc'), color: 'accent-blue' },
+              { emoji: '🧠', title: t('about.cards.ai.title'), desc: t('about.cards.ai.desc'), color: 'accent-purple' },
+              { emoji: '⚡', title: t('about.cards.iot.title'), desc: t('about.cards.iot.desc'), color: 'accent-green' },
+              { emoji: '🚀', title: t('about.cards.arch.title'), desc: t('about.cards.arch.desc'), color: 'accent-orange' },
             ].map((card, i) => (
               <Reveal key={card.title} delay={0.1 + i * 0.1} className="shrink-0 w-[80vw] sm:w-auto">
                 <div className={`dev-card bg-gh-surface/60 border border-gh-border hover:border-${card.color}/40 transition-colors p-5 h-full`}>
@@ -107,10 +110,10 @@ export default function AboutSection() {
 
             {/* Duplicated 4 Cards (Hidden on Desktop) to create a seamless infinite loop */}
             {[
-              { emoji: '💻', title: 'Web Engineering', desc: 'Building responsive Single Page Applications and Progressive Web Apps (PWA) using React, Tailwind CSS, Laravel, and modern JavaScript toolchains.', color: 'accent-blue' },
-              { emoji: '🧠', title: 'AI & Machine Learning', desc: 'Designing predictive neural networks, computer vision algorithms, and fuzzy logic expert systems using Python, TensorFlow, and OpenCV.', color: 'accent-purple' },
-              { emoji: '⚡', title: 'IoT & Embedded Systems', desc: 'Interfacing ESP32/ESP8266 microcontrollers with real-time sensors, telemetry protocols (MQTT, HTTP), and cloud dashboards.', color: 'accent-green' },
-              { emoji: '🚀', title: 'Clean Architecture', desc: 'Writing maintainable, modular, and well-documented code adhering to solid engineering principles, Git versioning, and CI/CD workflows.', color: 'accent-orange' },
+              { emoji: '💻', title: t('about.cards.web.title'), desc: t('about.cards.web.desc'), color: 'accent-blue' },
+              { emoji: '🧠', title: t('about.cards.ai.title'), desc: t('about.cards.ai.desc'), color: 'accent-purple' },
+              { emoji: '⚡', title: t('about.cards.iot.title'), desc: t('about.cards.iot.desc'), color: 'accent-green' },
+              { emoji: '🚀', title: t('about.cards.arch.title'), desc: t('about.cards.arch.desc'), color: 'accent-orange' },
             ].map((card) => (
               <div key={`dup-${card.title}`} className={`shrink-0 w-[80vw] sm:hidden dev-card bg-gh-surface/60 border border-gh-border hover:border-${card.color}/40 transition-colors p-5`} aria-hidden="true">
                 <div className={`w-10 h-10 rounded-lg bg-${card.color}/10 text-${card.color} flex items-center justify-center text-xl mb-3 font-mono`}>

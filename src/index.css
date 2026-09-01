@@ -3,7 +3,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* GitHub Dark Palette */
+  /* GitHub Dark Palette (default) */
   --color-gh-canvas: #0d1117;
   --color-gh-surface: #161b22;
   --color-gh-border: #30363d;
@@ -30,6 +30,25 @@
   /* Fonts */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Light Mode Overrides ────────────────────────── */
+html.light {
+  --color-gh-canvas: #ffffff;
+  --color-gh-surface: #f6f8fa;
+  --color-gh-border: #d0d7de;
+  --color-gh-border-hover: #8b949e;
+  --color-gh-text: #1f2328;
+  --color-gh-text-muted: #656d76;
+  --color-gh-text-subtle: #8b949e;
+
+  /* Accent adjustments for better contrast on light */
+  --color-accent-blue: #0969da;
+  --color-accent-green: #1a7f37;
+  --color-accent-orange: #bc4c00;
+  --color-accent-purple: #8250df;
+  --color-accent-yellow: #9a6700;
+  --color-accent-red: #cf222e;
 }
 
 /* ── Base ────────────────────────────────────────── */
@@ -102,13 +121,18 @@
   .dev-btn {
     @apply px-4 py-1.5 bg-gh-surface text-gh-text font-medium text-sm rounded-md
            border border-gh-border transition-all duration-150
-           hover:border-gh-border-hover hover:bg-[#1f2937];
+           hover:border-gh-border-hover;
   }
 
   .dev-btn-primary {
-    @apply px-4 py-1.5 bg-accent-green text-gh-canvas font-semibold text-sm rounded-md
-           border border-accent-green/50 transition-all duration-150
-           hover:bg-[#2ea043];
+    @apply px-4 py-1.5 font-semibold text-sm rounded-md
+           border transition-all duration-150;
+    background-color: var(--color-accent-green);
+    color: var(--color-gh-canvas);
+    border-color: color-mix(in srgb, var(--color-accent-green) 50%, transparent);
+  }
+  .dev-btn-primary:hover {
+    filter: brightness(0.9);
   }
 
   .dev-card {

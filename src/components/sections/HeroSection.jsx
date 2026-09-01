@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import TerminalWindow from '../ui/TerminalWindow';
 import Reveal from '../ui/Reveal';
 
@@ -111,6 +112,8 @@ export default function HeroSection() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const { t } = useTranslation();
+
   return (
     <section id="hero" className="pt-6 pb-12 md:pt-10 md:pb-20 relative">
       {/* Background Ambient Glows — now with breathing animation */}
@@ -123,22 +126,22 @@ export default function HeroSection() {
           <Reveal delay={0.1}>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gh-surface border border-gh-border text-xs font-mono text-gh-text-muted">
               <span className="w-2 h-2 rounded-full bg-accent-green animate-pulse" />
-              Embedded Systems & Web Development
+              {t('hero.badge')}
             </div>
           </Reveal>
 
           <Reveal delay={0.25}>
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-gh-text tracking-tight leading-[1.15]">
-              Crafting Intelligent <br className="hidden sm:block" />
+              {t('hero.titleLine1')} <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-purple to-accent-green gradient-shimmer">
-                Web & IoT Systems
+                {t('hero.titleLine2')}
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.4}>
             <p className="text-gh-text-muted text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl">
-              Passionate embedded systems and web development specializing in full-stack web applications, AI/ML models, and real-time IoT systems. Focused on clean code, performance, and real-world impact.
+              {t('hero.description')}
             </p>
           </Reveal>
 
@@ -164,7 +167,7 @@ export default function HeroSection() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Resume
+                {t('hero.ctaResume')}
               </motion.a>
               <motion.button
                 onClick={() => scrollTo('toolbox')}
@@ -182,23 +185,23 @@ export default function HeroSection() {
             <div className="pt-6 border-t border-gh-border/60 flex flex-wrap items-center gap-6 font-mono text-xs text-gh-text-muted">
               <div>
                 <span className="text-gh-text font-bold text-sm md:text-base block">
-                  <AnimatedCounter target={3} suffix="+" /> Years
+                  <AnimatedCounter target={3} suffix="+" /> {t('hero.yearsLabel')}
                 </span>
-                Development Focus
+                {t('hero.yearsSub')}
               </div>
               <div className="h-6 w-[1px] bg-gh-border hidden sm:block" />
               <div>
                 <span className="text-gh-text font-bold text-sm md:text-base block">
-                  <AnimatedCounter target={10} suffix="+" /> Projects
+                  <AnimatedCounter target={10} suffix="+" /> {t('hero.projectsLabel')}
                 </span>
-                Web, AI & IoT
+                {t('hero.projectsSub')}
               </div>
               <div className="h-6 w-[1px] bg-gh-border hidden sm:block" />
               <div>
                 <span className="text-gh-text font-bold text-sm md:text-base block">
-                  <AnimatedCounter target={100} suffix="%" /> Custom
+                  <AnimatedCounter target={100} suffix="%" /> {t('hero.customLabel')}
                 </span>
-                Milestone Driven
+                {t('hero.customSub')}
               </div>
             </div>
           </Reveal>

@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "techStack": "Tech Stack",
+    "milestones": "Proyek",
+    "contact": "Kontak",
+    "resume": "Resume",
+    "github": "GitHub",
+    "githubProfile": "Profil GitHub",
+    "lightMode": "Mode Terang",
+    "darkMode": "Mode Gelap"
+  },
+  "hero": {
+    "badge": "Embedded Systems & Web Development",
+    "titleLine1": "Membangun Sistem",
+    "titleLine2": "Web & IoT Cerdas",
+    "description": "Bersemangat dalam pengembangan embedded systems dan web, berspesialisasi dalam aplikasi web full-stack, model AI/ML, dan sistem IoT real-time. Fokus pada kode bersih, performa, dan dampak nyata.",
+    "ctaMilestones": "Jelajahi Proyek",
+    "ctaResume": "Resume",
+    "ctaToolbox": "Lihat Tech Stack",
+    "yearsLabel": "Tahun",
+    "yearsSub": "Fokus Pengembangan",
+    "projectsLabel": "Proyek",
+    "projectsSub": "Web, AI & IoT",
+    "customLabel": "Kustom",
+    "customSub": "Berbasis Milestone"
+  },
+  "about": {
+    "tag": "// Tentang Saya",
+    "title": "Tentang Saya",
+    "subtitle": "Web & Embedded Systems Engineer yang berdedikasi, didorong oleh rasa ingin tahu, ketelitian teknis, dan membangun solusi berperforma tinggi.",
+    "name": "Muhammad Ilham Ramdhani",
+    "role": "Embedded Systems & Web Development",
+    "bio1": "Halo! Saya adalah seorang Web & Embedded Systems Engineer berbasis di Indonesia dengan latar belakang kuat dalam mengembangkan Progressive Web App, model Machine Learning, dan platform sensor IoT.",
+    "bio2": "Saya percaya bahwa rekayasa perangkat lunak adalah tentang memecahkan tantangan dunia nyata melalui arsitektur yang elegan, algoritma yang kokoh, dan integrasi hardware-software yang mulus.",
+    "downloadResume": "Unduh Resume Lengkap (.pdf)",
+    "location": "Lokasi: Indonesia",
+    "status": "Aktif Ngoding",
+    "cards": {
+      "web": {
+        "title": "Pengembangan Web",
+        "desc": "Membangun Single Page Application dan Progressive Web App (PWA) yang responsif menggunakan React, Tailwind CSS, Laravel, dan toolchain JavaScript modern."
+      },
+      "ai": {
+        "title": "AI & Machine Learning",
+        "desc": "Merancang jaringan saraf prediktif, algoritma computer vision, dan sistem pakar logika fuzzy menggunakan Python, TensorFlow, dan OpenCV."
+      },
+      "iot": {
+        "title": "IoT & Embedded Systems",
+        "desc": "Menghubungkan mikrokontroler ESP32/ESP8266 dengan sensor real-time, protokol telemetri (MQTT, HTTP), dan dashboard cloud."
+      },
+      "arch": {
+        "title": "Arsitektur Bersih",
+        "desc": "Menulis kode yang mudah dipelihara, modular, dan terdokumentasi dengan baik sesuai prinsip rekayasa perangkat lunak, Git versioning, dan alur kerja CI/CD."
+      }
+    }
+  },
+  "toolbox": {
+    "tag": "// Tech Stack & Framework",
+    "title": "Tech Stack",
+    "subtitle": "Daftar bahasa pemrograman, framework, library, dan alat yang saya gunakan untuk membangun produk yang skalabel.",
+    "allCategories": "Semua Kategori"
+  },
+  "milestones": {
+    "tag": "// Roadmap & Timeline",
+    "title": "Proyek & Milestone",
+    "subtitle": "Timeline kronologis dari rilis utama, prototipe riset, dan pengembangan perangkat lunak.",
+    "allCategories": "Semua Kategori",
+    "viewProject": "Lihat Proyek"
+  },
+  "contact": {
+    "tag": "// Komunitas & Kontak",
+    "title": "Hubungi Saya",
+    "subtitle": "Tinggalkan pesan di buku tamu atau hubungi saya melalui platform di bawah ini untuk mendiskusikan peluang rekayasa Web & IoT!",
+    "guestbook": "Buku Tamu Publik",
+    "directContact": "Kontak Langsung"
+  },
+  "footer": {
+    "copyright": "© 2026 Antares023. Dibuat dengan",
+    "github": "GitHub",
+    "email": "Email"
+  }
+}

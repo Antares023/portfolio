@@ -10,7 +10,8 @@ export default function Home() {
     <>
       <Helmet>
         <title>Muhammad Ilham Ramdhani | Web & Embedded Systems Engineer</title>
-        <meta name="description" content="Portfolio of Muhammad Ilham Ramdhani featuring About Me, Tech Toolbox, Milestone Projects, and Contact." />
+        <meta name="description" content="Halo! Saya Muhammad Ilham Ramdhani, saya adalah seorang Web & Embedded System Engineer di Indonesia dengan latar belakang kuat dalam mengembangkan Progressif Web App dan sistem sensor IoT." />
+        <meta name="keywords" content="Muhammad Ilham Ramdhani, Web Developer, Embedded Systems, IoT Systems Engineer, React, Arduino, Machine Learning, Portfolio" />
         <link rel="canonical" href="https://emham.my.id/" />
       </Helmet>
 
