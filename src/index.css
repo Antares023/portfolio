@@ -58,6 +58,7 @@ html.light {
   }
 
   body {
+    overflow-x: clip;
     background-color: var(--color-gh-canvas);
     color: var(--color-gh-text);
     font-family: var(--font-sans);
