@@ -10,7 +10,24 @@ export default function Home() {
     <>
       <Helmet>
         <title>Muhammad Ilham Ramdhani | Web & Embedded Systems Engineer</title>
-        <meta name="description" content="Halo! Saya Muhammad Ilham Ramdhani, saya adalah seorang Web & Embedded System Engineer di Indonesia dengan latar belakang kuat dalam mengembangkan Progressif Web App dan sistem sensor IoT." />
+        <meta name="description" content="Muhammad Ilham Ramdhani adalah seorang Web & Embedded Systems Engineer dari Universitas Muhammadiyah Cirebon (UMC). Portofolio proyek Web, IoT, dan Machine Learning." />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Muhammad Ilham Ramdhani",
+              "url": "https://emham.my.id/",
+              "jobTitle": "Web & Embedded Systems Engineer",
+              "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Universitas Muhammadiyah Cirebon",
+                "sameAs": "https://umc.ac.id/"
+              },
+              "knowsAbout": ["Web Development", "Embedded Systems", "IoT Engineering", "Machine Learning"]
+            }
+          `}
+        </script>
         <meta name="keywords" content="Muhammad Ilham Ramdhani, Web Developer, Embedded Systems, IoT Systems Engineer, React, Arduino, Machine Learning, Portfolio" />
         <link rel="canonical" href="https://emham.my.id/" />
       </Helmet>
