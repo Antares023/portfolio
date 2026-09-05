@@ -11,12 +11,12 @@ const variants = {
     visible: { opacity: 1, y: 0 },
   },
   'fade-left': {
-    hidden: { opacity: 0, x: -24 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
   },
   'fade-right': {
-    hidden: { opacity: 0, x: 24 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
   },
   'scale-in': {
     hidden: { opacity: 0, scale: 0.95 },
