@@ -1,8 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
-    <loc>https://www.emham.my.id/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+       <loc>https://www.emham.my.id/</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://www.emham.my.id/resume.pdf</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.emham.my.id/project/termoapp</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.emham.my.id/project/aquasync</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.emham.my.id/project/hidroponnik-pwa</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.emham.my.id/project/NutriscanAI</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.emham.my.id/project/fuzzy_tingkat_stress_mahasiswa</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.emham.my.id/project/Kelulusan_Mahasiswa_ANN</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.emham.my.id/project/aplikasi-penjualan-sederhana</loc>
+       <lastmod>2026-09-05T14:29:20+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
 </urlset>
