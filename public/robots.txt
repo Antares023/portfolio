@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://emham.my.id/sitemap.xml
