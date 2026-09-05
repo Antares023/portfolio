@@ -20,8 +20,6 @@ const routesToPrerender = [
   '/project/aquasync'
 ]
 
-let sitemapUrls = ''
-
 for (const url of routesToPrerender) {
   const { html, headTags } = render(url)
 
@@ -38,30 +36,7 @@ for (const url of routesToPrerender) {
   
   fs.writeFileSync(toAbsolute(filePath), appHtml)
   console.log('pre-rendered:', filePath)
-
-  // Append sitemap
-  sitemapUrls += `  <url>
-    <loc>https://www.emham.my.id${url}</loc>
-    <changefreq>${url === '/' ? 'weekly' : 'monthly'}</changefreq>
-    <priority>${url === '/' ? '1.0' : '0.8'}</priority>
-  </url>\n`
 }
-
-// Generate sitemap.xml
-const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapUrls}</urlset>`
-
-fs.writeFileSync(toAbsolute('dist/sitemap.xml'), sitemapContent)
-console.log('generated: dist/sitemap.xml')
-
-// Generate robots.txt
-const robotsContent = `User-agent: *
-Allow: /
-
-Sitemap: https://www.emham.my.id/sitemap.xml`
-fs.writeFileSync(toAbsolute('dist/robots.txt'), robotsContent)
-console.log('generated: dist/robots.txt')
 
 // Cleanup server folder so it's not deployed
 fs.rmSync(toAbsolute('dist/server'), { recursive: true, force: true })
