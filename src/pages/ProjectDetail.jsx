@@ -29,7 +29,7 @@ export default function ProjectDetail() {
   return (
     <>
       <Helmet>
-        <title>{project.title} · Antares023</title>
+        <title>{`${project.title} · Antares023`}</title>
         <meta name="description" content={project.shortDescription} />
         <link rel="canonical" href={`https://emham.my.id/project/${project.id}`} />
       </Helmet>

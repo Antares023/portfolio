@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
@@ -21,19 +21,17 @@ function AnimatedRoutes() {
   );
 }
 
-function App() {
+function App({ helmetContext }) {
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <ThemeProvider>
-        <Router>
-          <div className="min-h-screen flex flex-col bg-gh-canvas w-full transition-colors duration-300">
-            <Navbar />
-            <main className="flex-grow">
-              <AnimatedRoutes />
-            </main>
-            <Footer />
-          </div>
-        </Router>
+        <div className="min-h-screen flex flex-col bg-gh-canvas w-full transition-colors duration-300">
+          <Navbar />
+          <main className="flex-grow">
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+        </div>
       </ThemeProvider>
     </HelmetProvider>
   );

@@ -10,10 +10,12 @@ export function useTheme() {
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    // Check localStorage first
-    const saved = localStorage.getItem('portfolio-theme');
-    if (saved) return saved;
-    // Default to dark (current design)
+    // Check localStorage first, if available (browser environment)
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('portfolio-theme');
+      if (saved) return saved;
+    }
+    // Default to dark
     return 'dark';
   });
 
