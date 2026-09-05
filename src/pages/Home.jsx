@@ -17,7 +17,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Muhammad Ilham Ramdhani",
-              "url": "https://emham.my.id/",
+              "url": "https://www.emham.my.id/",
               "jobTitle": "Web & Embedded Systems Engineer",
               "alumniOf": {
                 "@type": "CollegeOrUniversity",
@@ -29,7 +29,7 @@ export default function Home() {
           `}
         </script>
         <meta name="keywords" content="Muhammad Ilham Ramdhani, Web Developer, Embedded Systems, IoT Systems Engineer, React, Arduino, Machine Learning, Portfolio" />
-        <link rel="canonical" href="https://emham.my.id/" />
+        <link rel="canonical" href="https://www.emham.my.id/" />
       </Helmet>
 
       <div className="max-w-6xl mx-auto px-6 space-y-12">

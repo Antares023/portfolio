@@ -41,7 +41,7 @@ for (const url of routesToPrerender) {
 
   // Append sitemap
   sitemapUrls += `  <url>
-    <loc>https://emham.my.id${url}</loc>
+    <loc>https://www.emham.my.id${url}</loc>
     <changefreq>${url === '/' ? 'weekly' : 'monthly'}</changefreq>
     <priority>${url === '/' ? '1.0' : '0.8'}</priority>
   </url>\n`
@@ -59,7 +59,7 @@ console.log('generated: dist/sitemap.xml')
 const robotsContent = `User-agent: *
 Allow: /
 
-Sitemap: https://emham.my.id/sitemap.xml`
+Sitemap: https://www.emham.my.id/sitemap.xml`
 fs.writeFileSync(toAbsolute('dist/robots.txt'), robotsContent)
 console.log('generated: dist/robots.txt')
 
