@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const toAbsolute = (p) => path.resolve(__dirname, p)
 
-const template = fs.readFileSync(toAbsolute('dist/static/index.html'), 'utf-8')
+const template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8')
 const { render } = await import('./dist/server/entry-server.js')
 
 // Tentukan rute yang ingin di-prerender
@@ -30,7 +30,7 @@ for (const url of routesToPrerender) {
     appHtml = appHtml.replace('<!--head-tags-->', headTags)
   }
 
-  const filePath = `dist/static${url === '/' ? '/index' : url}.html`
+  const filePath = `dist${url === '/' ? '/index' : url}.html`
   const dir = path.dirname(filePath)
   if (!fs.existsSync(toAbsolute(dir))) {
     fs.mkdirSync(toAbsolute(dir), { recursive: true })
@@ -52,13 +52,17 @@ const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapUrls}</urlset>`
 
-fs.writeFileSync(toAbsolute('dist/static/sitemap.xml'), sitemapContent)
-console.log('generated: dist/static/sitemap.xml')
+fs.writeFileSync(toAbsolute('dist/sitemap.xml'), sitemapContent)
+console.log('generated: dist/sitemap.xml')
 
 // Generate robots.txt
 const robotsContent = `User-agent: *
 Allow: /
 
 Sitemap: https://emham.my.id/sitemap.xml`
-fs.writeFileSync(toAbsolute('dist/static/robots.txt'), robotsContent)
-console.log('generated: dist/static/robots.txt')
+fs.writeFileSync(toAbsolute('dist/robots.txt'), robotsContent)
+console.log('generated: dist/robots.txt')
+
+// Cleanup server folder so it's not deployed
+fs.rmSync(toAbsolute('dist/server'), { recursive: true, force: true })
+console.log('cleaned up: dist/server')

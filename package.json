@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run build:client && npm run build:server && node prerender.js",
-    "build:client": "vite build --outDir dist/static",
-    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "build:client": "vite build",
+    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server --emptyOutDir false",
     "lint": "oxlint",
-    "preview": "vite preview --outDir dist/static"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
