@@ -1,8 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect, Suspense, lazy } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import Giscus from '@giscus/react';
 import Reveal from '../ui/Reveal';
+
+const Giscus = lazy(() => import('@giscus/react'));
 
 function SectionAccentLine() {
   const ref = useRef(null);
@@ -65,7 +66,15 @@ const contactLinks = [
 ];
 
 export default function ContactSection() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [loadGiscus, setLoadGiscus] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoadGiscus(true);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="contact" className="py-16 border-t border-gh-border/60 relative">
@@ -86,29 +95,41 @@ export default function ContactSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Guestbook (Giscus) */}
-        <Reveal direction="fade-left" delay={0.15} className="lg:col-span-7">
-          <div className="dev-card bg-gh-surface/40 border border-gh-border p-4 sm:p-6 min-h-[400px]">
-            <h3 className="font-mono text-xs md:text-sm font-bold text-accent-purple mb-4 flex items-center gap-2 border-b border-gh-border/50 pb-2">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
+        <Reveal direction="fade-right" delay={0.2} className="lg:col-span-7 dev-card bg-gh-surface shadow-xl relative overflow-hidden group">
+          {/* Ambient glow for the card */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-full blur-2xl group-hover:bg-accent-blue/10 transition-colors duration-500 pointer-events-none" />
+          
+          <div className="relative z-10 p-4 sm:p-6">
+            <h3 className="text-xl font-bold text-gh-text mb-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
               Public Guestbook
             </h3>
-            <Giscus
-              id="comments"
-              repo="Antares023/portfolio"
-              repoId="R_kgDOUJEcsA"
-              category="General"
-              categoryId="DIC_kwDOUJEcsM4DEh54"
-              mapping="pathname"
-              term="Welcome to my portfolio!"
-              reactionsEnabled="1"
-              emitMetadata="0"
-              inputPosition="top"
-              theme="dark_dimmed"
-              lang="en"
-              loading="lazy"
-            />
+            <p className="text-gh-text-muted text-sm mb-6">
+              Leave a message if you'd like!
+            </p>
+            {loadGiscus ? (
+              <Suspense fallback={<div className="h-40 flex items-center justify-center text-gh-text-muted text-sm border border-gh-border border-dashed rounded-md">Loading guestbook...</div>}>
+                <Giscus
+                  id="comments"
+                  repo="Antares023/portfolio"
+                  repoId="R_kgDON7uUaw"
+                  category="General"
+                  categoryId="DIC_kwDON7uUa84CnE-t"
+                  mapping="pathname"
+                  strict="0"
+                  reactionsEnabled="1"
+                  emitMetadata="0"
+                  inputPosition="top"
+                  theme="transparent_dark"
+                  lang={i18n.language === 'id' ? 'id' : 'en'}
+                  loading="lazy"
+                />
+              </Suspense>
+            ) : (
+              <div className="h-40 flex items-center justify-center text-gh-text-muted text-sm border border-gh-border border-dashed rounded-md">
+                Preparing guestbook...
+              </div>
+            )}
           </div>
         </Reveal>
 
