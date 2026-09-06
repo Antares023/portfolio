@@ -68,17 +68,13 @@ const contactLinks = [
 export default function ContactSection() {
   const { t, i18n } = useTranslation();
   const [loadGiscus, setLoadGiscus] = useState(false);
-  
-  // Use a ref to detect when the guestbook section enters the viewport
-  const guestbookRef = useRef(null);
-  const isGuestbookInView = useInView(guestbookRef, { once: true, margin: '200px 0px' });
 
-  // Only trigger Giscus load when the user scrolls near the bottom
   useEffect(() => {
-    if (isGuestbookInView) {
+    const timer = setTimeout(() => {
       setLoadGiscus(true);
-    }
-  }, [isGuestbookInView]);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="contact" className="py-16 border-t border-gh-border/60 relative">
@@ -100,7 +96,8 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Guestbook (Giscus) */}
         <Reveal direction="fade-right" delay={0.2} className="lg:col-span-7 dev-card bg-gh-surface shadow-xl relative overflow-hidden group">
-          <div ref={guestbookRef} className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-full blur-2xl group-hover:bg-accent-blue/10 transition-colors duration-500 pointer-events-none" />
+          {/* Ambient glow for the card */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-full blur-2xl group-hover:bg-accent-blue/10 transition-colors duration-500 pointer-events-none" />
           
           <div className="relative z-10 p-4 sm:p-6">
             <h3 className="text-xl font-bold text-gh-text mb-2 flex items-center gap-2">
