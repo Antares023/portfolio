@@ -4,8 +4,11 @@ import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import React, { Suspense } from 'react';
 import Home from './pages/Home';
-import ProjectDetail from './pages/ProjectDetail';
+
+// Lazy load ProjectDetail since it's a heavy page
+const ProjectDetail = React.lazy(() => import('./pages/ProjectDetail'));
 import PageTransition from './components/ui/PageTransition';
 
 function AnimatedRoutes() {
@@ -13,10 +16,12 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-        <Route path="/project/:id" element={<PageTransition><ProjectDetail /></PageTransition>} />
-      </Routes>
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-gh-text">Loading...</div>}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+          <Route path="/project/:id" element={<PageTransition><ProjectDetail /></PageTransition>} />
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 }
