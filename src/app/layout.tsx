@@ -31,9 +31,12 @@ export const metadata: Metadata = {
     canonical: 'https://www.emham.my.id',
   },
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/avatar.png', type: 'image/png' },
+    ],
+    shortcut: '/avatar.png',
+    apple: '/avatar.png',
   },
   openGraph: {
     type: 'website',
