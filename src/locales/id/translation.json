@@ -4,6 +4,8 @@
     "about": "Tentang",
     "techStack": "Tech Stack",
     "milestones": "Proyek",
+    "experience": "Pengalaman",
+    "certificates": "Sertifikat",
     "contact": "Kontak",
     "resume": "Resume",
     "github": "GitHub",
@@ -68,6 +70,16 @@
     "subtitle": "Timeline kronologis dari rilis utama, prototipe riset, dan pengembangan perangkat lunak.",
     "allCategories": "Semua Kategori",
     "viewProject": "Lihat Proyek"
+  },
+  "experience": {
+    "tag": "// Perjalanan Profesional",
+    "title": "Pengalaman Kerja",
+    "subtitle": "Jejak peran profesional, magang, dan pencapaian pendidikan saya."
+  },
+  "certificate": {
+    "tag": "// Lisensi & Sertifikasi",
+    "title": "Sertifikat",
+    "subtitle": "Pencapaian terverifikasi dan kredensial profesional."
   },
   "contact": {
     "tag": "// Komunitas & Kontak",

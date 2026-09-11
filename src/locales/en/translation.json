@@ -4,6 +4,8 @@
     "about": "About",
     "techStack": "Tech Stack",
     "milestones": "Milestones",
+    "experience": "Experience",
+    "certificates": "Certificates",
     "contact": "Contact",
     "resume": "Resume",
     "github": "GitHub",
@@ -68,6 +70,16 @@
     "subtitle": "A chronological timeline of major releases, research prototypes, and software developments.",
     "allCategories": "All Categories",
     "viewProject": "View Project"
+  },
+  "experience": {
+    "tag": "// Professional Journey",
+    "title": "Work Experience",
+    "subtitle": "A history of my professional roles, internships, and educational milestones."
+  },
+  "certificate": {
+    "tag": "// Licenses & Certifications",
+    "title": "Certificates",
+    "subtitle": "Verified achievements and professional credentials."
   },
   "contact": {
     "tag": "// Community & Contact",
