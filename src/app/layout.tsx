@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     url: 'https://www.emham.my.id',
     siteName: 'Muhammad Ilham Ramdhani Portfolio',
     title: 'Muhammad Ilham Ramdhani | Web & Embedded Systems Engineer',
-    description: 'Portofolio resmi Muhammad Ilham Ramdhani — Insinyur Web & Embedded Systems. Menampilkan proyek Web modern, arsitektur IoT cerdas, dan AI/ML.',
+    description: 'Muhammad Ilham Ramdhani, seorang Web & Embedded Systems Engineer dari Universitas Muhammadiyah Cirebon (UMC). Menampilkan proyek Web modern, arsitektur IoT cerdas, dan AI/ML.',
     images: [
       {
         url: '/og-image.png',
