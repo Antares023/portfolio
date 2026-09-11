@@ -28,14 +28,37 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Muhammad Ilham Ramdhani",
+    "alternateName": ["Ilham Ramdhani", "Antares023", "emham"],
     "url": "https://www.emham.my.id/",
+    "image": "https://avatars.githubusercontent.com/u/147645907",
     "jobTitle": "Web & Embedded Systems Engineer",
+    "description": "Muhammad Ilham Ramdhani adalah seorang Web & Embedded Systems Engineer dari Universitas Muhammadiyah Cirebon (UMC). Berfokus pada pengembangan Web modern, sistem IoT cerdas, dan Machine Learning.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cirebon",
+      "addressRegion": "Jawa Barat",
+      "addressCountry": "ID"
+    },
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "Universitas Muhammadiyah Cirebon",
       "sameAs": "https://umc.ac.id/"
     },
-    "knowsAbout": ["Web Development", "Embedded Systems", "IoT Engineering", "Machine Learning"]
+    "sameAs": [
+      "https://github.com/Antares023",
+      "https://linkedin.com/in/muhammad-ilham-ramdhani-558b18354",
+      "https://instagram.com/em.ham_02"
+    ],
+    "knowsAbout": [
+      "Web Development",
+      "Embedded Systems",
+      "IoT Engineering",
+      "Machine Learning",
+      "Next.js",
+      "React",
+      "Arduino",
+      "ESP32"
+    ]
   };
 
   return (
